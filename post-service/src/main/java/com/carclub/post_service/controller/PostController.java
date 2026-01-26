@@ -27,7 +27,7 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    public Optional<PostEntity> findById(@PathVariable String id) {
+    public Optional<PostEntity> findById(@PathVariable Long id) {
         return postService.findPostById(id);
     }
 
@@ -37,12 +37,12 @@ public class PostController {
     }
 
     @PutMapping("/{id}")
-    public PostEntity update(@RequestBody PostEntity postEntity, @PathVariable String id) {
+    public PostEntity update(@RequestBody PostEntity postEntity, @PathVariable Long id) {
         return postService.updatePost(postEntity,id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable String id) {
+    public void deleteById(@PathVariable Long id) {
         postService.deletePostById(id);
     }
 

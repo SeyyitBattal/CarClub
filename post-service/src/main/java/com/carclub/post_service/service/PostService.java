@@ -22,7 +22,7 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public Optional<PostEntity> findPostById(String id) {
+    public Optional<PostEntity> findPostById(Long id) {
         return postRepository.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class PostService {
         return postRepository.save(postEntity);
     }
 
-    public PostEntity updatePost(PostEntity postEntity, String id) {
+    public PostEntity updatePost(PostEntity postEntity, Long id) {
         if (postRepository.findById(id).isPresent()) {
             postEntity.setId(id);
             return postRepository.save(postEntity);
@@ -39,7 +39,7 @@ public class PostService {
         }
     }
 
-    public Optional<PostEntity> deletePostById(String id) {
+    public Optional<PostEntity> deletePostById(Long id) {
         postRepository.deleteById(id);
         return postRepository.findById(id);
     }
