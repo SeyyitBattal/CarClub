@@ -1,21 +1,18 @@
 <div class="container">
-    <div class="post-box">
-        <h1>Car Club</h1>
-
+        @for (post of posts; track $index) {
+        <div class="post-box">
             <table>
                 <thead>
                     <tr>
-                    <th>Post</th>
+                        <th>id: {{post.id}}</th>
                     </tr>
                 </thead>
-
                 <tbody>
-                    @for (post of posts; track $index) {
                     <tr>
-                       <td>{{post.description}}</td>
+                       <td>post: {{post.description}}</td>
                     </tr>
-                    }
                 </tbody>
             </table>
-    </div>
+            </div>
+        }
 </div>
