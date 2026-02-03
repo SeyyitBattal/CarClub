@@ -1,6 +1,21 @@
 <div class="container">
     <div class="post-box">
-        <h3>POST DIV</h3>
-        <p>Post will be stay on there!</p>
+        <h1>Car Club</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                    <th>Post</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @for (post of posts; track $index) {
+                    <tr>
+                       <td>{{post.description}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
     </div>
 </div>

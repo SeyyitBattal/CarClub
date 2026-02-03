@@ -1,14 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Posts } from '../../models/posts';
-
-@Component({
-  selector: 'app-post-service',
-  imports: [],
-  templateUrl: './post-service.html',
-  styleUrl: './post-service.css',
-})
 
 @Injectable({
   providedIn: 'root',

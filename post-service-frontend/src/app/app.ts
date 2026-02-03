@@ -6,7 +6,8 @@ import { PostList } from "./components/post-list/post-list";
   selector: 'app-root',
   imports: [RouterOutlet, PostList],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  standalone:true,
 })
 export class App {
 
