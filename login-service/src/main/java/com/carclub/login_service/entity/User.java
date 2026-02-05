@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(schema = "car_club_post", name = "user_table")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId")
+    @Column(name = "id")
     private Long userId;
 
-    @Column(name = "userId")
+    @Column(name = "username")
     private String username;
 
     @Column(name = "password")
