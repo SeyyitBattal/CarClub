@@ -1,1 +1,39 @@
-Login
+<div class="auth-container">
+  <div class="auth-card p-5 shadow-8">
+    <h2 class="text-white font-bold mb-2">Welcome to Car Club!</h2>
+
+    <div class="flex mb-5 gap-2 toggle-container p-1">
+      <button [class.active]="mode === 'login'" (click)="mode = 'login'" class="flex-1 auth-toggle">Login</button>
+      <button [class.active]="mode === 'register'" (click)="mode = 'register'" class="flex-1 auth-toggle">Register</button>
+    </div>
+
+    <div class="grid p-fluid">
+      <div class="col-12 md:col-6 mb-3">
+        <label class="block text-gray-400 text-xs mb-2">Email</label>
+        <input pInputText placeholder="name@mail.com" class="custom-input" />
+      </div>
+      <div class="col-12 md:col-6 mb-3">
+        <label class="block text-gray-400 text-xs mb-2">Password (min 8)</label>
+        <input pInputText type="password" placeholder="********" class="custom-input" />
+      </div>
+
+      @if (mode === 'register') {
+    <ng-container>
+        <div class="col-12 md:col-6 mb-3">
+          <label class="block text-gray-400 text-xs mb-2">Safety Question</label>
+          <div class="security-box">6 + 4 = ?</div>
+        </div>
+        <div class="col-12 md:col-6 mb-3">
+          <label class="block text-gray-400 text-xs mb-2">Answer</label>
+          <input pInputText placeholder="7" class="custom-input" />
+        </div>
+      </ng-container>
+      }
+    </div>
+
+    <div class="flex justify-content-end mt-4">
+      <button pButton [label]="mode === 'login' ? 'Login' : 'Register'" 
+              class="submit-btn p-button-rounded p-button-success"></button>
+    </div>
+  </div>
+</div>
